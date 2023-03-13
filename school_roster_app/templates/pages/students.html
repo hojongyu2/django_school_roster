@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%if students%}
+    {% for student in students %}
+    <div>
+        <span>{{ student.name }}</span>
+        <span>{{ student.age }}</span>
+    </div>
+    {%endfor%}
+    {%endif%}
+
+    {% if students_by_id %}
+    <div>
+        <p>NAME: {{ students_by_id.name }}</p>
+        <p>AGE: {{ students_by_id.age }}</p>
+    </div>
+    {%elif students%}
+    {%else%}
+    Wrong IDs
+    {%endif%}
+</body>
+</html>
